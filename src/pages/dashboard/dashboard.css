@@ -1,0 +1,135 @@
+.dashboard {
+  overflow: hidden;
+  background-color: #f5f7fa;
+}
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px 20px;
+  grid-auto-flow: row dense;
+  grid-template-areas:
+    "box-1 box-1"
+    "box-2 box-4"
+    "box-3 box-4";
+  height: 76vh;
+}
+.title-dashboard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  flex: 1;
+  color: #000040;
+}
+.dashboard-date {
+  position: absolute;
+  right: 100px;
+  float: top;
+  color: #3b3e45;
+}
+.icon-less {
+  border: none;
+  background-color: #fff;
+  height: 10px;
+  width: 10px;
+  padding: 18px 18px;
+  margin-right: 40px;
+  border-radius: 90px;
+}
+.icon-great {
+  border: none;
+  background-color: #fff;
+  height: 10px;
+  width: 10px;
+  margin-left: 40px;
+  padding: 18px 18px;
+  border-radius: 90px;
+}
+.icon-great,
+.icon-less {
+  cursor: pointer;
+  font-size: 150px;
+}
+.box1 {
+  grid-area: box-1;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #000040;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #e6f0fb;
+}
+
+.box1 p {
+  border: 1px solid #000040;
+  height: 100%;
+  width: 200px;
+  border: 1px solid #000040;
+  border-radius: 10px;
+  box-shadow: 3px 2px 8px rgba(0, 0, 64, 0.1);
+  padding: 10px;
+  background-color: #758df7;
+  color: #fff;
+  font-weight: bold;
+  font-family: inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.box2 {
+  grid-area: box-2;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #000040;
+  margin-left: 40px;
+  background-color: #e6f0fb;
+}
+
+.box3 {
+  grid-area: box-3;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #000040;
+  margin-left: 40px;
+  background-color: #e6f0fb;
+}
+
+.box4 {
+  grid-area: box-4;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #000040;
+  margin-right: 40px;
+  background-color: #e6f0fb;
+}
+
+.box2,
+.box4 {
+  margin-top: 10px;
+}
+
+.box3,
+.box4 {
+  margin-bottom: 20px;
+}
+
+.new-total-employees {
+  display: grid;
+  flex: 1;
+  border: 1px solid #000040;
+}
+
+.box2 h2,
+.box4 h2 {
+  color: #343c6a;
+}

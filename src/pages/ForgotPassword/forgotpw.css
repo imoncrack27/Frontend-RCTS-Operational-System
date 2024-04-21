@@ -1,0 +1,84 @@
+.forgot-pass-container {
+  max-height: 100%;
+  width: 50%;
+  overflow: hidden;
+  margin: 200px 0 100px 80px;
+  letter-spacing: normal;
+}
+
+.forgot-pass-parent {
+  width: 1200px;
+  height: 100%;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.img-human-forgot {
+  position: absolute;
+  top: -188.9px;
+  left: 0px;
+  width: 1200px;
+  height: 125vh;
+  overflow: hidden;
+}
+.link-back-login {
+  font-size: 20px;
+  color: black;
+  height: 50px;
+  font-family: inter;
+  width: 500px;
+  text-align: left;
+  transition: 0.15s;
+  text-decoration: none;
+}
+.link-back-login:hover {
+  opacity: 0.6;
+}
+.link-back-login:active {
+  opacity: 1;
+}
+.p-forgot-pass {
+  font-size: 20px;
+  color: gray;
+  height: 50px;
+  font-family: inter;
+  width: 500px;
+  text-align: left;
+}
+.phone-number-input {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 300px;
+  height: 40px;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-family: inter;
+}
+.button-forgot-password {
+  display: block;
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 300px;
+  height: 40px;
+  background-color: #50c878;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inter;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.button-forgot-password:hover {
+  background-color: #4fea72;
+  color: #fff;
+}
+.button-forgot-password:active {
+  background-color: #8df1a4;
+  color: #fff;
+}

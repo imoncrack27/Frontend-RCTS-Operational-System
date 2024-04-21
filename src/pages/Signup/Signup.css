@@ -1,0 +1,129 @@
+.signup-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  weight: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.signup {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+.appointment-scheduling-signup {
+  color: #095073;
+  padding-top: 20px;
+  margin-left: 150px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 60px;
+  width: 200px;
+}
+.appointment-signup {
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+}
+.signup-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+.signup-img img {
+  height: 100vh;
+}
+.img-signup {
+  width: 940px;
+  height: 740px;
+}
+.forms-signup {
+  display: flex;
+  position: relative;
+}
+.input-signup {
+  margin-left: 100px;
+}
+
+.input-signup input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: block;
+  margin: 30px 0;
+  outline-color: #62b0ff;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  opacity: 0.9;
+}
+.signup-input {
+  margin-left: 30px;
+}
+.signup-input input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: block;
+  margin: 30px 0;
+  outline-color: #62b0ff;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.signup-checkbox {
+  position: absolute;
+  right: 0;
+  left: 100px;
+  top: 230px;
+}
+.checkbox-signup {
+  margin-bottom: 10px;
+}
+.checkbox-signup2 {
+}
+.button-signup {
+  margin-top: 50px;
+  margin-left: 300px;
+}
+.signup-button {
+  background-color: #04c45c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 120px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  width: 300px;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+.signup-button:hover {
+  opacity: 0.8;
+}
+.signup-button:active {
+  opacity: 0.6;
+}
+.span-signup {
+  margin-left: 320px;
+}
+.already-have-an-account {
+  color: #015fec;
+  text-decoration: none;
+}
