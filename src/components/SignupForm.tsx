@@ -1,4 +1,4 @@
-import { Form, Input, Checkbox, Button, message } from "antd";
+import { Form, Input, Checkbox, Button } from "antd";
 import "../pages/Signup/Signup.css";
 
 const SignupForm = ({

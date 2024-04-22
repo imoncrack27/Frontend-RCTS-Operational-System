@@ -7,22 +7,31 @@ import "../pages/Login/Login.css";
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
 
-  const onFinish = (values: any) => {
-    // Simulating login logic here (replace with actual login logic)
-    const { email, password } = values;
+  const onFinish = async (values: any) => {
+    try {
+      const response = await fetch("http://localhost:3000/routes/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-    // Check if email and password match some stored credentials
-    if (email === "example@example.com" && password === "password") {
-      // Successful login
-      message.success("Login successful!");
-      console.log("Logged in successfully");
+      const data = await response.json();
+      if (response.ok) {
+        // Successful login
+        message.success("Login successful!");
+        console.log("Logged in successfully");
 
-      // Redirect to the dashboard or any other page
-      navigate("/");
-    } else {
-      // Failed login
-      message.error("Invalid email or password");
-      console.log("Invalid email or password");
+        // Redirect to the dashboard or any other page
+        navigate("/");
+      } else {
+        // Failed login
+        message.error(data.message || "Login failed");
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
