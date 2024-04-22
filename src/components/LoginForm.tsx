@@ -1,50 +1,31 @@
 import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
-import type { FormInstance } from "antd";
+import { Button, Checkbox, Form, Input, message } from "antd";
+import { useNavigate } from "react-router-dom";
+import "../pages/Login/Login.css";
 
-interface SubmitButtonProps {
-  form: FormInstance;
-}
-
-const SubmitButton: React.FC<React.PropsWithChildren<SubmitButtonProps>> = ({
-  form,
-  children,
-}) => {
-  const [submittable, setSubmittable] = React.useState<boolean>(false);
-
-  const values = Form.useWatch([], form);
-
-  React.useEffect(() => {
-    form
-      .validateFields({ validateOnly: true })
-      .then(() => setSubmittable(true))
-      .catch(() => setSubmittable(false));
-  }, [form, values]);
-
-  const onClick = () => {
-    console.log("clicked");
-  };
-
-  return (
-    <Button
-      type="primary"
-      htmlType="submit"
-      className="login-form-button"
-      disabled={!submittable}
-      onClick={onClick}
-      style={{ backgroundColor: "#04c45c" }}
-    >
-      {children}
-    </Button>
-  );
-};
 const LoginForm: React.FC = () => {
+  const navigate = useNavigate();
+
   const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+    // Simulating login logic here (replace with actual login logic)
+    const { email, password } = values;
+
+    // Check if email and password match some stored credentials
+    if (email === "example@example.com" && password === "password") {
+      // Successful login
+      message.success("Login successful!");
+      console.log("Logged in successfully");
+
+      // Redirect to the dashboard or any other page
+      navigate("/");
+    } else {
+      // Failed login
+      message.error("Invalid email or password");
+      console.log("Invalid email or password");
+    }
   };
 
-  const [form] = Form.useForm();
   return (
     <Form
       name="normal_login"
@@ -53,7 +34,7 @@ const LoginForm: React.FC = () => {
       onFinish={onFinish}
     >
       <Form.Item
-        name="Email"
+        name="email"
         rules={[{ required: true, message: "Please input your Email!" }]}
       >
         <Input
@@ -81,7 +62,14 @@ const LoginForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <SubmitButton form={form}>Log in</SubmitButton>
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+          style={{ backgroundColor: "#04c45c" }}
+        >
+          Log in
+        </Button>
 
         <a href="/signup" className="registration">
           Register now!

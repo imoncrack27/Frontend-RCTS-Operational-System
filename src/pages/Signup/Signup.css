@@ -5,6 +5,7 @@
   weight: 100%;
   height: 100vh;
   overflow: auto;
+  font-family: "Inter", sans-serif;
 }
 
 .signup {
@@ -85,15 +86,58 @@
   left: 100px;
   top: 230px;
 }
-.checkbox-signup {
-  margin-bottom: 10px;
-}
-.checkbox-signup2 {
-}
+
 .button-signup {
   margin-top: 50px;
   margin-left: 300px;
 }
+
+/* SignupForm component */
+
+.signup-form {
+  height: 100vh;
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+.span-signup {
+  margin-left: 280px;
+}
+.already-have-an-account {
+  color: #015fec;
+  text-decoration: none;
+}
+.first-form-signup {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+  width: 300px;
+}
+.first-form-signup input {
+  font-size: 17px;
+  font-weight: 500;
+}
+.second-form-signup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+.second-form-signup input {
+  font-size: 17px;
+  font-weight: 500;
+}
+.password-signup {
+  font-size: 17px;
+  font-weight: 500;
+}
+.checkbox-signup {
+  margin-left: 45px;
+}
+
 .signup-button {
   background-color: #04c45c;
   color: white;
@@ -107,23 +151,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
+  margin-left: 250px;
   margin-bottom: 30px;
   width: 300px;
   font-size: 25px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
+  transition: 0.3s;
 }
 .signup-button:hover {
   opacity: 0.8;
 }
 .signup-button:active {
   opacity: 0.6;
-}
-.span-signup {
-  margin-left: 320px;
-}
-.already-have-an-account {
-  color: #015fec;
-  text-decoration: none;
 }

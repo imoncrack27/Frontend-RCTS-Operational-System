@@ -54,6 +54,9 @@
   width: 300px;
   margin-left: 30px;
 }
+.login-form-button:hover {
+  opacity: 0.8;
+}
 .forgot-password {
   margin-left: 150px;
 }
