@@ -1,30 +1,40 @@
 import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, message } from "antd";
-import { useNavigate } from "react-router-dom";
+
 import "../pages/Login/Login.css";
 
 const LoginForm: React.FC = () => {
-  const navigate = useNavigate();
-
-  const onFinish = async (values: any) => {
+  const postFormData = async (url: string, formData: any) => {
     try {
-      const response = await fetch("http://localhost:3000/routes/login", {
+      const response = await fetch("http://localhost:8000/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
-      if (response.ok) {
+      return { data, status: response.ok };
+    } catch (error: any) {
+      console.error("Error:", error);
+      return { error: error.message, status: false };
+    }
+  };
+
+  const onFinish = async (values: any) => {
+    try {
+      const { data, status } = await postFormData(
+        "http://localhost:8000/api/user/login",
+        values
+      );
+      if (status) {
         // Successful login
         message.success("Login successful!");
         console.log("Logged in successfully");
 
         // Redirect to the dashboard or any other page
-        navigate("/");
       } else {
         // Failed login
         message.error(data.message || "Login failed");

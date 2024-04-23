@@ -1,15 +1,35 @@
-import { Form, Input, Checkbox, Button } from "antd";
+import { Input, Checkbox, Button, Form, message } from "antd";
 import "../pages/Signup/Signup.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useSignup } from "../hooks/useSignup";
 
-const SignupForm = ({
-  form,
-  onFinish,
-  onFinishFailed,
-}: {
-  form: any;
-  onFinish: any;
-  onFinishFailed: any;
-}) => {
+const SignupForm = () => {
+  const [form] = Form.useForm();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const { signup } = useSignup();
+
+  const onFinish = async (formData: any) => {
+    const { userName, email, phoneNumber, idNumber, password } = formData;
+    setLoading(true);
+    try {
+      // Simulating form submission (replace this with your actual form submission logic)
+      await signup(userName, email, phoneNumber, idNumber, password); // Simulate API request delay
+      message.success("Signup successful!");
+      console.log("Form submitted:", formData);
+      navigate("/login");
+    } catch (error) {
+      console.error("Error:", error);
+      message.error("Signup failed. Please try again later.");
+    }
+    setLoading(false);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Form submission failed:", errorInfo);
+  };
+
   return (
     <Form
       form={form}
@@ -24,7 +44,7 @@ const SignupForm = ({
     >
       <div className="first-form-signup">
         <Form.Item
-          name="username"
+          name="userName"
           rules={[{ required: true, message: "Username is required" }]}
         >
           <Input placeholder="Username" />
@@ -46,7 +66,7 @@ const SignupForm = ({
           name="phoneNumber"
           rules={[{ required: true, message: "Phone Number is required" }]}
         >
-          <Input placeholder="Contact Number" maxLength={13} />
+          <Input placeholder="Phone Number" maxLength={13} />
         </Form.Item>
       </div>
       {/* Username */}
@@ -135,6 +155,7 @@ const SignupForm = ({
           type="primary"
           htmlType="submit"
           className="signup-button"
+          disabled={loading}
           style={{ backgroundColor: "#04c45c" }}
         >
           Signup
